@@ -5,8 +5,15 @@ import sys
 # The cache parameter is here for if you want to implement
 # a solution that is more efficient than the naive 
 # recursive solution
+
+# Tribonacci numbers, see https://oeis.org/A000073
 def eating_cookies(n, cache=None):
-  pass
+  if n <= 1:
+    return 1
+  elif n == 2:
+    return 2
+  else:
+    return eating_cookies(n-3) + eating_cookies(n-2) + eating_cookies(n-1)
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
